@@ -6,97 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stel je voor</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/themeChange.js">
+        //Theme change script
+    </script>
+    <script defer src="js/themeCheck.js">
+        //Check system theme and change to it
+    </script>
     <script>
-        function changeTheme() {
-            if (darkTheme) {
-                document.body.removeAttribute("theme");
-                darkTheme = false;
-            } else {
-                document.body.setAttribute("theme", "dark");
-                darkTheme = true;
-            }
-
-            if (darkTheme) {
-                button.setAttribute("value", "Light Mode");
-            } else {
-                button.setAttribute("value", "Dark Mode");;
-            }
-        }
+        //Magic flash of unstyled content fix for Firefox by declaring an empty variable???
+        let FF_FOUC_FIX;
     </script>
 </head>
 
 <body>
     <header>
-        <input type="button" id="button" onclick="changeTheme()"></input>
+        <input type="button" id="button" value="Dark Mode" onclick="changeTheme()">
     </header>
     <article class="flex-stack">
-        <div class="flex-container">
-            <img id="portrait" src="img/portrait.jpg">
-            <div class="flex-stack">
-                <h1>Jeffrey Chen</h1>
-                <p>
-                    Ik ben in Nederland Geboren en woon in Steigereiland
-                    <br>
-                    <br>Ik doe nu een software developer opleiding om een game developer
-                </p>
+        <div id="article">
+            <div class="flex-container">
+                <img id="portrait" src="img/portrait.jpg" alt="Een foto van mezelf">
+                <div class="flex-stack">
+                    <h1>Jeffrey Chen</h1>
+                    <p>
+                        Ik ben in Nederland Geboren en woon in Steigereiland
+                        <br>
+                        <br>Ik doe nu een software developer opleiding om een game developer
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="flex-container">
-            <div class="flex-stack">
-                <h1>Mijn woonplaats</h1>
+            <h1>Mijn woonplaats</h1>
+            <div class="flex-container">
                 <p>
                     Ik woon met beide van mijn ouders.
                     <br>We hebben geen huisdieren.
                 </p>
+                <img src="img/steigereiland.jpg" alt="Foto vanuit vogelperspectief van Steigereiland">
             </div>
-            <img src="">
-        </div>
-        </div>
-        <div class="flex-container">
-            <div class="flex-stack">
-                <h1>In mijn vrije tijd..</h1>
-                <img src="">
+            <h1>In mijn vrije tijd...</h1>
+            <div class="flex-container">
+                <img src="img/factorio.jpg" alt="Foto van een fabriek in de spel Factorio">
+                <p>Speel ik meerdere soorten spellen</p>
             </div>
-            <p>Game ik</p>
-        </div>
-        <div class="flex-container">
-            <div class="flex-stack">
-                <h1>Wat kan ik al</h1>
+            <h1>Wat kan ik al</h1>
+            <div class="flex-container">
                 <p>Ik kan Engels spreken en schrijven</p>
+                <figure>
+                    <img src="img/conversation.png" alt="Een gesprek tussen mij en een andere persoon">
+                    <figcaption>Ik ben Shirge in de foto</figcaption>
+                </figure>
             </div>
-            <img src="">
-        </div>
-        <div class="flex-stack center">
-            <h1>Mijn top 10 games</h1>
-            <ul>
-                <li>Factorio</li>
-                <li>Team Fortress 2</li>
-                <li>osu</li>
-                <li>Minecraft</li>
-                <li>Marfusha: Sentinel Girls</li>
-                <li>ULTRAKILL</li>
-                <li>CrossCode</li>
-                <li>One Step From Eden</li>
-                <li>Chrono Ark</li>
-                <li>Rabbit Hole</li>
-            </ul>
+            <div id="center">
+                <h1>Mijn top 10 games</h1>
+                <ul>
+                    <li>Factorio</li>
+                    <li>Team Fortress 2</li>
+                    <li>osu</li>
+                    <li>Minecraft</li>
+                    <li>Marfusha: Sentinel Girls</li>
+                    <li>ULTRAKILL</li>
+                    <li>CrossCode</li>
+                    <li>One Step From Eden</li>
+                    <li>Chrono Ark</li>
+                    <li>Rabbit Hole</li>
+                </ul>
+            </div>
         </div>
     </article>
     <footer>
         Copyright 2024 - Jeffrey
     </footer>
-    <script>
-        const systemDarkTheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')).matches;
-        const button = document.getElementById("button");
-        var darkTheme;
-
-        if (systemDarkTheme) {
-            var darkTheme = true;
-        } else {
-            var darkTheme = false;
-        }
-        changeTheme();
-    </script>
 </body>
 
 </html>
